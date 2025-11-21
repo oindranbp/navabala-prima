@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Nava Bala Prima – Trading & Logistics</title>
+    <style>
+        :root {
+            --navy: #05142F;
+            --navy-soft: #0A2344;
+            --gold: #F2B335;
+            --bg: #F6F7FB;
+            --text: #111111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ========== HEADER ========== */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(5, 20, 47, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-wrap img {
+            height: 72px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            color: #ffffff;
+        }
+
+        .logo-text-overline {
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .logo-text-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: #ffffff;
+            opacity: 0.85;
+        }
+
+        .header-nav a:hover {
+            opacity: 1;
+        }
+
+        /* ========== HERO ========== */
+
+        .hero-shell {
+            background:
+                linear-gradient(135deg, rgba(5, 20, 47, 0.55), rgba(5, 20, 47, 0.80)),
+                url("hero_tugboat_barge_navabalaprima.png") center/cover no-repeat;
+            color: #ffffff;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 96px 20px 72px;
+            display: grid;
+            grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-left {
+            max-width: 640px;
+        }
+
+        .hero-overline {
+            font-size: 11px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-size: clamp(30px, 4vw, 40px);
+            line-height: 1.15;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero-lead {
+            font-size: 14px;
+            max-width: 520px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: var(--gold);
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #241300;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+        }
+
+        .btn-primary span.icon {
+            margin-left: 8px;
+        }
+
+        .hero-note {
+            font-size: 12px;
+            max-width: 260px;
+            opacity: 0.8;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, rgba(9, 34, 73, 0.96), rgba(6, 18, 45, 0.98));
+            border-radius: 26px;
+            padding: 30px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+            width: 100%;
+            max-width: 340px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        
+.hero-card-logo {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+}
+.hero-card-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+
+        .hero-card-label {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 6px;
+        }
+
+        .hero-card-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero-card-pill {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .pill {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .hero-card-text {
+            font-size: 12px;
+            opacity: 0.85;
+        }
+
+        /* MAIN CONTENT */
+
+        main {
+            background: #ffffff;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 52px 20px 72px;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            margin-bottom: 18px;
+        }
+
+        .section-overline {
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy-soft);
+            margin-bottom: 4px;
+        }
+
+        .section-intro {
+            font-size: 14px;
+            max-width: 760px;
+        }
+
+        .text-body {
+            font-size: 14px;
+        }
+
+        .text-body p + p {
+            margin-top: 10px;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            border-radius: 16px;
+            border: 1px solid rgba(5, 20, 47, 0.06);
+            padding: 16px 16px 18px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+        }
+
+        .card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy-soft);
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            font-size: 13px;
+        }
+
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .clients-grid img {
+            max-width: 120px;
+            max-height: 42px;
+            object-fit: contain;
+            filter: grayscale(0.1);
+        }
+
+        .projects-list {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .projects-list li {
+            margin-bottom: 4px;
+        }
+
+        /* gambar quarry supaya proporsional */
+        .quarry-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        /* KONTAK SECTION */
+
+        .center-title {
+            text-align: center;
+        }
+
+        .contact-grid-two {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+            gap: 28px;
+            align-items: stretch;
+            margin-top: 10px;
+        }
+
+        .contact-card {
+            background: #05142F;
+            color: #ffffff;
+            padding: 28px 26px 26px;
+            border-radius: 26px;
+            box-shadow: 0 16px 28px rgba(0,0,0,0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.14);
+            right: -80px;
+            bottom: -80px;
+        }
+
+        .contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-text {
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .contact-line {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .contact-line span.icon {
+            margin-right: 8px;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+        }
+
+        .contact-form-box {
+            background: #F9FAFD;
+            border-radius: 26px;
+            padding: 24px 24px 22px;
+            border: 1px solid rgba(5,20,47,0.06);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+        }
+
+        .contact-form-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--navy-soft);
+        }
+
+        .contact-form-subtitle {
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .form-grid-two {
+            display: grid;
+            grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+            gap: 14px 16px;
+            margin-bottom: 14px;
+        }
+
+        .form-group {
+            font-size: 13px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 500;
+            color: var(--navy-soft);
+        }
+
+        .form-control,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(5,20,47,0.16);
+            font-size: 13px;
+            font-family: inherit;
+            background: #ffffff;
+        }
+
+        .form-textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .form-row {
+            margin-bottom: 10px;
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 24px;
+            border-radius: 999px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #05142F;
+            color: #ffffff;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+        }
+
+        .btn-submit span.icon {
+            margin-left: 8px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #ffffff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 12px;
+            color: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* layout kontak lebih ke tengah */
+        #kontak .contact-grid-two {
+            max-width: 960px;
+            margin: 20px auto 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                padding-top: 88px;
+            }
+
+            .hero-right {
+                justify-content: flex-start;
+            }
+
+            .site-header {
+                position: static;
+            }
+
+            .contact-grid-two {
+                grid-template-columns: minmax(0,1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-inner {
+                padding-inline: 16px;
+            }
+
+            .hero {
+                padding-inline: 16px;
+            }
+
+            .content {
+                padding-inline: 16px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .hero-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo-wrap">
+            <img src="nbp-logo1.png" alt="Logo PT. Nava Bala Prima">
+            <div class="logo-text">
+                <div class="logo-text-overline">Trading &amp; Logistics</div>
+                <div class="logo-text-name">PT. Nava Bala Prima</div>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="#ringkasan">Ringkasan</a>
+            <a href="#layanan">Fokus Layanan</a>
+            <a href="#angkutan">Moda Angkutan</a>
+            <a href="#klien">Klien</a>
+            <a href="#profil-perusahaan">Profil Perusahaan</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero-shell">
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-overline">Trading · Aggregates · Integrated Logistics</div>
+            <h1 class="hero-title">
+                Menghubungkan Sumber Material dengan Proyek Infrastruktur Indonesia
+            </h1>
+            <p class="hero-lead">
+                Dari quarry hingga lokasi proyek, PT. Nava Bala Prima mengurus pasok material alam
+                dan logistik kargo secara end-to-end: lebih efisien, lebih terkendali, dan tepat waktu.
+            </p>
+            <div class="hero-cta-row">
+                <a class="btn-primary" href="#kontak">
+                    Saya ingin tahu lebih lanjut
+                    <span class="icon">➜</span>
+                </a>
+                <p class="hero-note">
+                    Fokus pada jalan tol, pelabuhan, bandara, kawasan industri, dan IKN.
+                </p>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <aside class="hero-card">
+                <div class="hero-card-logo">
+                    <img src="nbp-logo1.png" alt="Logo PT. Nava Bala Prima">
+                </div>
+                <div class="hero-card-label">Fokus Layanan</div>
+                <div class="hero-card-title">Trading + Integrated Logistics</div>
+                <div class="hero-card-pill">
+                    <span class="pill">Aggregates</span>
+                    <span class="pill">Bulk Cargo</span>
+                    <span class="pill">Project Logistics</span>
+                </div>
+                <p class="hero-card-text">
+                    Suplai material konstruksi dan logistik terintegrasi untuk proyek strategis
+                    nasional, dengan kontrol volume, jadwal, dan kualitas layanan.
+                </p>
+            </aside>
+        </div>
+    </section>
+</div>
+
+<main>
+    <div class="content">
+
+        <section class="section" id="ringkasan">
+            <header class="section-header">
+                <div class="section-overline">Tentang Perusahaan</div>
+                <h2 class="section-title">PT. Nava Bala Prima</h2>
+                <p class="section-intro">
+                    PT. Nava Bala Prima adalah perusahaan perdagangan material konstruksi dan
+                    jasa logistik terintegrasi yang berfokus pada kebutuhan proyek infrastruktur
+                    dan industri di Indonesia.
+                </p>
+            </header>
+            <div class="text-body">
+                <p>
+                    Kami mengelola end-to-end supply chain material alam mencakup perencanaan kebutuhan, pengawasan volume dan pergerakan material, serta koordinasi pasokan agar proyek berjalan lancar dan sesuai jadwal.<span class="bold">batu split, boulder,
+                    limestone, pasir</span>, dan komoditas lainnya untuk mendukung proyek-proyek
+                    strategis nasional, mulai dari jalan tol, pelabuhan, bandara, kawasan industri,
+                    hingga pengembangan Ibu Kota Nusantara.
+                </p>
+                <p>
+                    Melalui jaringan mitra quarry, pelabuhan, pemilik kapal, dan transporter darat,
+                    kami menyediakan solusi end-to-end mulai dari pengadaan, pengangkutan,
+                    penyimpanan, hingga pengiriman ke titik proyek dengan standar keselamatan dan
+                    ketepatan waktu yang tinggi.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="layanan">
+            <header class="section-header">
+                <div class="section-overline">Fokus Layanan</div>
+                <h2 class="section-title">Solusi End-to-End Trading &amp; Logistics</h2>
+                <p class="section-intro">
+                    Layanan kami mengintegrasikan perdagangan material dan logistik kargo sehingga
+                    klien hanya berhadapan dengan satu pengelola rantai pasok.
+                </p>
+            </header>
+            <div class="grid">
+                <article class="card">
+                    <h3>Perdagangan Material</h3>
+                    <p>
+                        Pengadaan dan penjualan material konstruksi dan komoditas curah dari
+                        berbagai sumber quarry dan pemasok terpercaya.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Logistik Terintegrasi</h3>
+                    <p>
+                        Perencanaan dan eksekusi pengiriman dari titik asal hingga lokasi proyek,
+                        termasuk pengaturan jadwal kapal, tongkang, dan armada truk.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Supply Chain Management (SCM)</h3>
+                    <p>
+                        Manajemen end-to-end supply chain mencakup perencanaan kebutuhan, pengawasan pergerakan muatan, serta koordinasi pasokan agar proyek berjalan lancar dan sesuai jadwal.</p>
+                </article>
+                <article class="card">
+                    <h3>Solusi Khusus Proyek</h3>
+                    <p>
+                        Skema layanan yang disesuaikan dengan karakteristik proyek besar, termasuk
+                        pengaturan moda, rute, dan pola pasok yang optimal.
+                    </p>
+                </article>
+            </div>
+
+            <div style="margin-top:18px;">
+                <a class="btn-primary" href="#kontak">
+                    Saya ingin tahu lebih lanjut
+                    <span class="icon">➜</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="angkutan">
+            <header class="section-header">
+                <div class="section-overline">Moda Angkutan</div>
+                <h2 class="section-title">Moda Angkutan Darat dan Laut</h2>
+                <p class="section-intro">
+                    Kombinasi transportasi darat dan laut memungkinkan pengiriman material dari
+                    quarry ke proyek secara efisien dan terukur.
+                </p>
+            </header>
+            <div class="transport-grid">
+                <article class="card">
+                    <h3>Moda Angkutan Darat</h3>
+                    <p>
+                        Armada truk dan hauling untuk pengangkutan material dari quarry, pabrik, atau
+                        stockpile ke pelabuhan maupun langsung ke lokasi proyek.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Moda Angkutan Laut</h3>
+                    <p>
+                        Layanan tongkang dan kapal untuk pengiriman komoditas curah lintas pelabuhan,
+                        termasuk koordinasi bongkar muat dan jadwal sandar.
+                    </p>
+                </article>
+            </div>
+
+            <div style="margin-top:18px;">
+                <a class="btn-primary" href="#kontak">
+                    Saya ingin tahu lebih lanjut
+                    <span class="icon">➜</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="quarry">
+            <header class="section-header">
+                <div class="section-overline">Quarry &amp; Fasilitas</div>
+                <h2 class="section-title">Sumber Material Utama</h2>
+                <p class="section-intro">
+                    Material utama yang kami suplai berasal dari quarry di Palu dan Rembang, dengan akses
+                    ke fasilitas crusher yard dan jalur angkutan yang terhubung dengan pelabuhan.
+                </p>
+            </header>
+            <div class="transport-grid">
+                <article class="card">
+                    <h3>Quarry Palu</h3>
+                    <p>Quarry berbasis batuan andesit dengan akses jalur angkut menuju pelabuhan.</p>
+                    <img src="quarry-palu-howl-road.png" alt="Quarry Palu Haul Road" class="quarry-img">
+                </article>
+                <article class="card">
+                    <h3>Quarry Rembang</h3>
+                    <p>Limestone &amp; crusher yard untuk kebutuhan material konstruksi dan industri.</p>
+                    <img src="quarry-rembang-crusher-yard.png" alt="Quarry Rembang Crusher Yard" class="quarry-img">
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="klien">
+            <header class="section-header center-title">
+                <div class="section-overline">Klien &amp; Mitra</div>
+                <h2 class="section-title">Contoh Proyek yang Telah Didukung</h2>
+                <p class="section-intro" style="margin: 0 auto;">
+                    PT. Nava Bala Prima bekerja sama dengan berbagai perusahaan di sektor energi,
+                    infrastruktur, dan manufaktur yang membutuhkan kepastian suplai material dan logistik.
+                </p>
+            </header>
+            <ul class="projects-list" style="max-width:760px;margin:10px auto 18px;">
+                <li>Suplai material dan logistik untuk proyek jalan tol dan jembatan.</li>
+                <li>Pengiriman aggregates untuk pengembangan pelabuhan dan kawasan industri.</li>
+                <li>Dukungan material konstruksi untuk proyek infrastruktur energi dan utilitas.</li>
+            </ul>
+            <div class="clients-grid">
+                <img src="logo-kln.png" alt="Logo KLN">
+                <img src="logo-sig.png" alt="Logo SIG">
+                <img src="logo-pionirbeton.png" alt="Logo Pionir Beton">
+                <img src="logo-pp.png" alt="Logo PP">
+                <img src="logo-waskita.png" alt="Logo Waskita">
+            </div>
+        </section>
+
+        <section class="section" id="profil-perusahaan">
+            <header class="section-header">
+                <div class="section-overline">Profil Perusahaan</div>
+                <h2 class="section-title">Legal &amp; Corporate Details</h2>
+                <p class="section-intro">
+                    Ringkasan informasi legal dan rekening resmi PT. Nava Bala Prima untuk keperluan korespondensi dan administrasi.
+                </p>
+            </header>
+
+            <div class="grid">
+                <article class="card">
+                    <h3>Identitas Badan Usaha</h3>
+                    <p><span class="bold">Nama Perseroan:</span> PT. Nava Bala Prima</p>
+                </article>
+
+                <article class="card">
+                    <h3>Legal &amp; Perizinan</h3>
+                    <p><span class="bold">Nomor Akta Pendirian:</span><br>
+                        168
+                    </p>
+                    <p><span class="bold">NPWP:</span><br>
+                        1000 0000 0570 5257
+                    </p>
+                    <p><span class="bold">NIB (Nomor Induk Berusaha):</span><br>
+                        2509250116504
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Rekening Perusahaan</h3>
+                    <p><span class="bold">Bank:</span> Bank Mandiri</p>
+                    <p><span class="bold">Nama Rekening:</span><br>
+                        PT NAVA BALA PRIMA
+                    </p>
+                    <p><span class="bold">Nomor Rekening:</span><br>
+                        101-00-1449343-9
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Direksi</h3>
+                    <p>Reza Hantoro Winode – Direktur</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="kontak">
+            <header class="section-header center-title">
+                <div class="section-overline">Kontak</div>
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-intro" style="margin: 0 auto;">
+                    Isi formulir berikut atau hubungi kami secara langsung. Tim kami akan menghubungi Anda kembali secepatnya.
+                </p>
+            </header>
+
+            <div class="contact-grid-two">
+                <div class="contact-card">
+                    <div class="contact-title">Kantor &amp; Kontak</div>
+                    <p class="contact-text">
+                        Silakan hubungi kami untuk kebutuhan suplai material, permintaan penawaran,
+                        atau diskusi solusi logistik proyek Anda.
+                    </p>
+                    <p class="contact-line">
+                        <span class="icon">📍</span>
+                        STC Senayan Lantai 4 No. 31–34<br>
+                        Jl. Asia Afrika Pintu IX Senayan<br>
+                        Tanah Abang, Jakarta Pusat 10270
+                    </p>
+                    <p class="contact-line">
+                        <span class="icon">📞</span>
+                        <a href="tel:+622123097076">+62 21 230 97076</a>
+                    </p>
+                    <p class="contact-line">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:admin@navabalaprima.com">admin@navabalaprima.com</a>
+                    </p>
+                </div>
+
+                <div class="contact-form-box">
+                    <div class="contact-form-title">Form Permintaan Informasi</div>
+                    <p class="contact-form-subtitle">
+                        Isi formulir berikut, tim kami akan menghubungi Anda kembali secepatnya.
+                    </p>
+                    <form action="mailto:admin@navabalaprima.com" method="post" enctype="text/plain">
+                        <div class="form-grid-two">
+                            <div class="form-group">
+                                <label class="form-label" for="nama">Nama Lengkap</label>
+                                <input class="form-control" id="nama" name="Nama Lengkap" type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="perusahaan">Perusahaan</label>
+                                <input class="form-control" id="perusahaan" name="Perusahaan" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" id="email" name="Email" type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="telepon">No. Telepon / WA</label>
+                                <input class="form-control" id="telepon" name="Telepon / WA" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="topik">Topik</label>
+                                <select class="form-select" id="topik" name="Topik">
+                                    <option value="Permintaan Penawaran">Permintaan Penawaran</option>
+                                    <option value="Informasi Layanan">Informasi Layanan</option>
+                                    <option value="Kerja Sama Proyek">Kerja Sama Proyek</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="pesan">Pesan</label>
+                                <textarea class="form-textarea" id="pesan" name="Pesan"></textarea>
+                            </div>
+                        </div>
+
+                        <button class="btn-submit" type="submit">
+                            Kirim Formulir
+                            <span class="icon">✈️</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <span>© 2025 PT. Nava Bala Prima. All rights reserved.</span>
+        <span>Trading · Aggregates · Integrated Logistics</span>
+    </div>
+</footer>
+
+</body>
+</html>
